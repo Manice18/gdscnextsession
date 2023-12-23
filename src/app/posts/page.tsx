@@ -7,7 +7,7 @@ export default async function PostsPage() {
   const response = await fetch(`https://dummyjson.com/posts?limit=${3}`);
   const data = await response.json();
 
-  const posts = await prisma.post.findMany();
+  // const posts = await prisma.post.findMany();
 
   return (
     <main className="text-center pt-16 px-5">
@@ -18,7 +18,7 @@ export default async function PostsPage() {
         <PostsList />
       </Suspense> */}
 
-      {/* <PostsList posts={data.posts} /> */}
+      {/* <PostsList posts={posts} /> */}
       <PostsList posts={data.posts} />
     </main>
   );

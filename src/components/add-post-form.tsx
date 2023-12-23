@@ -15,7 +15,7 @@ export default function AddPostForm() {
       },
     });
 
-    revalidatePath("/posts"); // this reloads the page after the action is done
+    // revalidatePath("/posts"); // this reloads the page after the action is done
   };
 
   return (
