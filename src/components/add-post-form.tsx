@@ -1,4 +1,4 @@
-import { addPost } from "@/lib/actions";
+// import { addPost } from "@/lib/actions";
 import SubmitBtn from "./submit-btn";
 import prisma from "@/lib/db";
 import { revalidatePath } from "next/cache";
@@ -6,7 +6,7 @@ import { revalidatePath } from "next/cache";
 export default function AddPostForm() {
   const addPost = async (formData: FormData) => {
     "use server";
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await new Promise((resolve) => setTimeout(resolve, 2000)); //this makes it wait for 2 seconds before moving to the next path
 
     await prisma.post.create({
       data: {
@@ -15,7 +15,7 @@ export default function AddPostForm() {
       },
     });
 
-    revalidatePath("/posts");
+    revalidatePath("/posts"); // this reloads the page after the action is done
   };
 
   return (
